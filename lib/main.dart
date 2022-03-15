@@ -10,12 +10,12 @@ void main() {
       );
   final text1 = Container(
     child: Text('物件1',
-      style: TextStyle(fontSize: 10),
+      style: TextStyle(fontSize: 30),
     ),
   );
   final text2 = Container(
     child: Text('物件2',
-      style: TextStyle(fontSize: 20),
+      style: TextStyle(fontSize: 30),
     ),
   );
   final text3 = Container(
@@ -24,13 +24,56 @@ void main() {
     ),
   );
 
-  var appBody=Container(
-    child:Row(
-      children: <Widget>[text1,text2,text3],
-      mainAxisAlignment: MainAxisAlignment.center,
-    ),
-    margin: EdgeInsets.all(10),
+  var appBody=CustomScrollView(
+    primary: false,
+    slivers: <Widget>[
+      SliverPadding(
+        padding: const EdgeInsets.all(20),
+        sliver: SliverGrid.count(
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 2,
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.green[100],
+            ),
+
+              text1,
+
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.green[200],
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.green[300],
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.green[400],
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.green[500],
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.green[600],
+            ),
+          ],
+        ),
+      ),
+    ],
   );
+
+  //var appBody=Container(
+    //child:Row(
+      //children: <Widget>[text1,text2,text3],
+      //mainAxisAlignment: MainAxisAlignment.center,
+   // ),
+    //margin: EdgeInsets.all(10),
+  //);
 
   var appBar=AppBar(
     title: appTitle,
